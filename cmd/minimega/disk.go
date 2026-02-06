@@ -366,6 +366,8 @@ func diskInject(dst, partition string, pairs map[string]string, options []string
 		out, err := processWrapper("mount", "-o", "ntfs-3g", path, mntDir)
 		if err != nil {
 			log.Error("failed to mount partition")
+			// adding debug statement
+			log.Error("mounting failed HARD: %v", err)
 			return fmt.Errorf("[image %s] %v: %v", dst, out, err)
 		}
 	}
