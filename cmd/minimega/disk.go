@@ -354,7 +354,7 @@ func diskInject(dst, partition string, pairs map[string]string, options []string
 
 	_, err = processWrapper(args...)
 	// adding debug statement
-	log.Error("mounting from above mount command", "%v", err)
+	log.Error("mounting from above mount command: %v", err)
 	if err != nil {
 		// check that ntfs-3g is installed
 		_, err = processWrapper("ntfs-3g", "--version")
